@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour
     private ActorController controller;
     private Jumping jumper;
 
-    public bool touchScreenMode;                                //if you want to use WASD, make it false. if you want to use buttons, true.
+    public bool touchScreenMode;                                //if you want to use WASD, make touchScreenMode false. if you want to use buttons, true.
     public GameObject leftBullet;
     private bool hasKey = false;
     public GameObject rightBullet;
@@ -26,10 +26,9 @@ public class PlayerManager : MonoBehaviour
     private bool jumping = false;
     
     private bool wasRunningBeforeJump = false;
-    private Renderer renderer;
+    private Renderer render;
     private Animator animator;
     public Text healthText;
-    private Transform firePoint;
     private Rigidbody2D rb;
     
 
@@ -39,10 +38,9 @@ public class PlayerManager : MonoBehaviour
         jumper = GetComponent<Jumping>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        renderer = GetComponent<Renderer>();
+        render = GetComponent<Renderer>();
         player = GetComponent<Player>();
         healthText.text = "Health: " + player.playerStats.health.ToString();
-        firePoint = transform.FindChild("firePoint");
     }
 
     void Update()
@@ -143,6 +141,13 @@ public class PlayerManager : MonoBehaviour
             if (hasKey)
 				loadScene(loadLevelOnVictory);
         }
+        else if(otherObject.gameObject.tag == "HealthPickUp")
+        {
+            player.healPlayer(1);
+            setHealthText();
+            Destroy(otherObject.gameObject);
+        }
+
     }
 
     void OnTriggerStay2D(Collider2D otherObject)
@@ -166,11 +171,9 @@ public class PlayerManager : MonoBehaviour
     {
 		
 		if (facingRight) {
-			Instantiate (rightBullet, firePoint.position, Quaternion.identity);
 			animator.SetInteger("State", 5);
 		}
 		if (!facingRight) {
-			Instantiate (leftBullet, firePoint.position, Quaternion.identity);
 			animator.SetInteger("State", 5);
 		}
     }
@@ -201,10 +204,10 @@ public class PlayerManager : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            renderer.material.color = hurtColor;
+            render.material.color = hurtColor;
             cantBeHurt = true;
             yield return new WaitForSeconds(.1f);
-            renderer.material.color = normalColor;
+            render.material.color = normalColor;
             yield return new WaitForSeconds(.1f);
             cantBeHurt = false;
         }

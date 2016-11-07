@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
     [System.Serializable]
     public class PlayerStats
     {
+        public int maxHealth = 5;
         public int health = 5;
     }
 
@@ -26,6 +27,13 @@ public class Player : MonoBehaviour {
         {
             Destroy(this);
         } 
+    }
+
+    public void healPlayer(int healAmount)
+    {
+        playerStats.health += healAmount;
+        if (playerStats.health > playerStats.maxHealth)
+            playerStats.health = playerStats.maxHealth;
     }
     
      

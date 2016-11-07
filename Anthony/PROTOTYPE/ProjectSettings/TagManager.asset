@@ -16,7 +16,7 @@ TagManager:
   - Key
   - Enemy
   - Aggro
-  - Door
+  - HealthPickUp
   layers:
   - Default
   - TransparentFX
@@ -29,7 +29,7 @@ TagManager:
   - Menu Items
   - Environment
   - Enemies
-  - 
+  - Pickups
   - 
   - 
   - 
@@ -60,8 +60,14 @@ TagManager:
   - name: Foreground
     uniqueID: 1859086223
     locked: 0
+  - name: Enemies
+    uniqueID: 321017759
+    locked: 0
   - name: Characters
     uniqueID: 3940858523
+    locked: 0
+  - name: Pickups
+    uniqueID: 3507107593
     locked: 0
   - name: UI
     uniqueID: 771169021

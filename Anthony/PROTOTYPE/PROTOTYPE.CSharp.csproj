@@ -68,10 +68,11 @@
   <ItemGroup>
     <Compile Include="Assets\Levels\Level_Loader.cs" />
     <Compile Include="Assets\Scripts\ActorController.cs" />
-    <Compile Include="Assets\Scripts\BulletController.cs" />
     <Compile Include="Assets\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Scripts\DestroyWithDelay.cs" />
     <Compile Include="Assets\Scripts\ExitController.cs" />
+    <Compile Include="Assets\Scripts\HealthDrop.cs" />
+    <Compile Include="Assets\Scripts\HealthUI.cs" />
     <Compile Include="Assets\Scripts\Jumping.cs" />
     <Compile Include="Assets\Scripts\MeleeAttack.cs" />
     <Compile Include="Assets\Scripts\MenuController.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Assets\Scripts\TreantController.cs" />
     <Compile Include="Assets\Scripts\WolfController.cs" />
     <Compile Include="Assets\Scripts\ZombieController.cs" />
+    <Compile Include="Assets\healthPickUp.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

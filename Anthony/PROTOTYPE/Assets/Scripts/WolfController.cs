@@ -18,13 +18,17 @@ public class WolfController : MonoBehaviour
     Animator animator;
     Rigidbody2D rb;
     BoxCollider2D bc2d;
+    CircleCollider2D c2d;
     GameObject childGo;
+    public GameObject theDrop;
+    private int randomNumber;
 
 	void Start ()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         bc2d = GetComponent<BoxCollider2D>();
+        c2d = GetComponent<CircleCollider2D>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         wallLeft = transform.position.x - patrolWidth / 2;
@@ -81,9 +85,10 @@ public class WolfController : MonoBehaviour
             isDead = true;
             StopWalk();
             rb.isKinematic = true;
+            dropHealth();
             Destroy(bc2d);
-            Destroy(gameObject, 2);
-            
+            Destroy(c2d);
+            Destroy(gameObject, 1);
         }
     }
 
@@ -138,5 +143,12 @@ public class WolfController : MonoBehaviour
     {
         animator.SetInteger("State", 1);
         speed = 0;
+    }
+
+    public void dropHealth()
+    {
+        randomNumber = Random.Range(1, 101);
+        if (randomNumber < 35)
+            Instantiate(theDrop, transform.position, transform.rotation);
     }
 }

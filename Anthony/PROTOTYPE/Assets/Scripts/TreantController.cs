@@ -5,14 +5,20 @@ public class TreantController : MonoBehaviour
 {
 	public Collider2D attackTrigger;
 	public Transform target;
-
+    public GameObject theDrop;
 	Transform transform;
 	Animator animator;
 	bool playerInAggroRange;
-	bool facingLeft;
+    bool facingLeft;
+    private bool dead;
+    private int randomNumber;
+    Renderer render;
+    private Color hurtColor = Color.black;
 
-	void Start () 
+    void Start () 
 	{
+        render = GetComponent<Renderer>();
+        dead = false;
 		facingLeft = false;
 		playerInAggroRange = false;
 		attackTrigger.enabled = false;
@@ -25,7 +31,7 @@ public class TreantController : MonoBehaviour
 		if (facingLeft == true) {
 			
 		}
-		if (playerInAggroRange) {
+		if (playerInAggroRange && dead == false) {
 			attack();
 		} else if (!playerInAggroRange) {
 			idle ();
@@ -36,8 +42,12 @@ public class TreantController : MonoBehaviour
 	{
 		if (otherObject.gameObject.tag == "PlayerAttack") 
 		{
-			Destroy (gameObject);
-		}
+            dead = true;
+            idle();
+            render.material.color = hurtColor;
+            dropHealth();
+            Destroy(gameObject, 1);
+        }
 		if (otherObject.gameObject.tag == "Player")
 		{
 			playerInAggroRange = true;
@@ -48,8 +58,8 @@ public class TreantController : MonoBehaviour
 
 	void attack()
 	{
-		attackTrigger.enabled = true;
-		animator.SetBool ("Attacking", true);
+            attackTrigger.enabled = true;
+            animator.SetBool("Attacking", true);
 	}
 
 	void idle()
@@ -81,4 +91,11 @@ public class TreantController : MonoBehaviour
 			}
 		}
 	}
+
+    public void dropHealth()
+    {
+        randomNumber = Random.Range(1, 101);
+        if (randomNumber < 35)
+            Instantiate(theDrop, transform.position, transform.rotation);
+    }
 }
