@@ -8,8 +8,8 @@ public class HealthUI : MonoBehaviour {
     public float texHeight;
 
 	void Start () {
-        texWidth = tex.width;
-        texHeight = tex.height;
+        texWidth = tex.width/2;
+        texHeight = tex.height/2;
     }
 
     void OnGUI()
@@ -18,8 +18,8 @@ public class HealthUI : MonoBehaviour {
         Player player = player1.GetComponent<Player>();
         if (player.playerStats.health > 0)
         {
-            Rect posRect = new Rect(0, 0, texWidth / 5 * player.playerStats.health, texHeight);
-            Rect texRect = new Rect(0, 0, 1.0f / 5 * player.playerStats.health, 1.0f);
+            Rect posRect = new Rect(0, 0, texWidth / 8 * player.playerStats.health, texHeight);
+            Rect texRect = new Rect(0, 0, 1.0f / 8f * player.playerStats.health, 1.0f);
             GUI.DrawTextureWithTexCoords(posRect, tex, texRect);
         }
         

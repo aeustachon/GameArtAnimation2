@@ -6,8 +6,8 @@ public class Player : MonoBehaviour {
     [System.Serializable]
     public class PlayerStats
     {
-        public int maxHealth = 5;
-        public int health = 5;
+        public int maxHealth = 8;
+        public int health = 8;
     }
 
     public PlayerStats playerStats = new PlayerStats();

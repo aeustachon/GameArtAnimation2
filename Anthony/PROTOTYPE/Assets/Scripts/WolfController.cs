@@ -38,7 +38,7 @@ public class WolfController : MonoBehaviour
         facingRight = true;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (playerInAggroRange) {
             animator.SetInteger("State", 1);

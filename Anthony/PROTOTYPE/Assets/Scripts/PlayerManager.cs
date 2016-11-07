@@ -152,7 +152,7 @@ public class PlayerManager : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D otherObject)
     {
-        if (otherObject.gameObject.tag == "Enemy" && !cantBeHurt)
+        if ((otherObject.gameObject.tag == "Enemy" || otherObject.gameObject.tag == "PassiveEnemy") && !cantBeHurt)
         {
             player.damagePlayer(1);
             setHealthText();

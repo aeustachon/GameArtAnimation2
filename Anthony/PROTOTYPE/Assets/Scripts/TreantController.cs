@@ -31,7 +31,7 @@ public class TreantController : MonoBehaviour
 		if (facingLeft == true) {
 			
 		}
-		if (playerInAggroRange && dead == false) {
+		if (playerInAggroRange && !dead) {
 			attack();
 		} else if (!playerInAggroRange) {
 			idle ();
@@ -56,7 +56,7 @@ public class TreantController : MonoBehaviour
 		}
 	}
 
-	void attack()
+    void attack()
 	{
             attackTrigger.enabled = true;
             animator.SetBool("Attacking", true);
