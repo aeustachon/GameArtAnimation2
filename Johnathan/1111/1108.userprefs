@@ -1,0 +1,22 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TreantController.cs">
+    <Files>
+      <File FileName="Assets\Scripts\HealthUI.cs" Line="19" Column="38" />
+      <File FileName="Assets\Scripts\PlayerManager.cs" Line="155" Column="96" />
+      <File FileName="Assets\healthPickUp.cs" Line="7" Column="5" />
+      <File FileName="Assets\Scripts\ActorController.cs" Line="73" Column="2" />
+      <File FileName="Assets\Scripts\MeleeAttack.cs" Line="49" Column="32" />
+      <File FileName="Assets\Scripts\Player.cs" Line="6" Column="5" />
+      <File FileName="Assets\Scripts\Jumping.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BulletController.cs" Line="22" Column="37" />
+      <File FileName="Assets\Scripts\WolfController.cs" Line="77" Column="27" />
+      <File FileName="Assets\Scripts\GunController.cs" Line="6" Column="2" NotebookId="1" />
+      <File FileName="Assets\Scripts\TreantController.cs" Line="75" Column="2" NotebookId="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
