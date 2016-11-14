@@ -1792,6 +1792,7 @@ MonoBehaviour:
   lookAheadReturnSpeed: 0.5
   lookAheadMoveThreshold: 0.1
   yPosRestriction: -1
+  maxYHeight: 7
 --- !u!81 &2080908488
 AudioListener:
   m_ObjectHideFlags: 0
