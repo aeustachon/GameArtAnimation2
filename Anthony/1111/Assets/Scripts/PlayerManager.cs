@@ -147,7 +147,6 @@ public class PlayerManager : MonoBehaviour
             setHealthText();
             Destroy(otherObject.gameObject);
         }
-
     }
 
     void OnTriggerStay2D(Collider2D otherObject)
@@ -164,6 +163,8 @@ public class PlayerManager : MonoBehaviour
             }
         }
     }
+
+
 
     private void RunAnimation()
     {
