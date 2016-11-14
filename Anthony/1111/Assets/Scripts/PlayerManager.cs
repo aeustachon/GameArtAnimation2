@@ -46,7 +46,6 @@ public class PlayerManager : MonoBehaviour
     {
         var horizontalInput = Input.GetAxis("Horizontal");
         // player movement
-        //Debug.Log(controller.IsGrounded);
         // left player movement
         if (Mathf.Abs(horizontalInput) > 0.0f || moveRight || moveLeft)                 //check for keyboard movement, or check if eventTriggers were pressed.
             {      

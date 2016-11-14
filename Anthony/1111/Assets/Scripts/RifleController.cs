@@ -9,7 +9,8 @@ public class RifleController : MonoBehaviour {
 	public GameObject leftBullet;
 
 	private bool attacking = false;
-	private float attackTimer = 0;
+    public float fireRate = .1f;
+    private float nextFire = .0f;
 
 	private Transform firePoint;
 
@@ -20,35 +21,36 @@ public class RifleController : MonoBehaviour {
 
 	void Update()
 	{
-		/*
-		if (Input.GetKeyDown (KeyCode.Space) && !attacking) 
-		{
-			attacking = true;
-			attackTimer = attackCD;
-		}
 
-		if (attacking) 
-		{
-			if (attackTimer > 0) 
-			{
-				attackTimer -= Time.deltaTime;
-			}
-			else 
-			{
-				attacking = false;
-			}
-		}*/
+
+        if (attacking && Time.time > nextFire)
+        {
+            shoot();
+        }
 	}
 
 	public void attack()
 	{
-		//attacking = true;
-		//attackTimer = attackCD;
-		if (firePoint.transform.position.x > gameObject.transform.position.x) {
-			Instantiate (rightBullet, firePoint.position, Quaternion.identity);
-		}
-		if (firePoint.transform.position.x < gameObject.transform.position.x) {
-			Instantiate (leftBullet, firePoint.position, Quaternion.identity);
-		}
+	    attacking = true;
 	}
+
+    public void stopAttack()
+    {
+        attacking = false;
+    }
+
+    public void shoot()
+    {
+        if (firePoint.transform.position.x > gameObject.transform.position.x)
+        {
+            nextFire = Time.time + fireRate;
+            GameObject clone = Instantiate(rightBullet, transform.position, transform.rotation) as GameObject;
+
+        }
+        if (firePoint.transform.position.x < gameObject.transform.position.x)
+        {
+            nextFire = Time.time + fireRate;
+            GameObject clone = Instantiate(leftBullet, transform.position, transform.rotation) as GameObject;
+        }
+    }
 }

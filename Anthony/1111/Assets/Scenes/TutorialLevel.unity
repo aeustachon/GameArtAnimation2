@@ -746,6 +746,21 @@ Prefab:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 122429347}
+    - target: {fileID: 50000013200319696, guid: ae9ec652453ef1549ae8024f63178e72,
+        type: 2}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000013200319696, guid: ae9ec652453ef1549ae8024f63178e72,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011514068692, guid: ae9ec652453ef1549ae8024f63178e72,
+        type: 2}
+      propertyPath: loadLevelOnVictory
+      value: TutorialLevelComplete
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae9ec652453ef1549ae8024f63178e72, type: 2}
   m_IsPrefabParent: 0

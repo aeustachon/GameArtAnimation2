@@ -18,6 +18,7 @@ public class TreantController : MonoBehaviour
     private int randomNumber;
 	private Renderer render;
     private Color hurtColor = Color.black;
+    private Color normalColor = Color.white;
 
     void Start () 
 	{
@@ -109,7 +110,7 @@ public class TreantController : MonoBehaviour
 	{
 		dead = true;
 		idle();
-		render.material.color = hurtColor;
+        StartCoroutine(Flasher());
 		dropHealth();
 		Destroy(gameObject, 1);
 	}
@@ -119,5 +120,16 @@ public class TreantController : MonoBehaviour
         randomNumber = Random.Range(1, 101);
         if (randomNumber < 35)
             Instantiate(theDrop, transform.position, transform.rotation);
+    }
+
+    IEnumerator Flasher()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            render.material.color = hurtColor;
+            yield return new WaitForSeconds(.1f);
+            render.material.color = normalColor;
+            yield return new WaitForSeconds(.05f);
+        }
     }
 }
