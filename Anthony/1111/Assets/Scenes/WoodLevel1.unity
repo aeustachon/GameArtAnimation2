@@ -811,7 +811,7 @@ Prefab:
     - target: {fileID: 114000011514068692, guid: ae9ec652453ef1549ae8024f63178e72,
         type: 2}
       propertyPath: touchScreenMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114000012230423868, guid: ae9ec652453ef1549ae8024f63178e72,
         type: 2}
@@ -827,11 +827,6 @@ Prefab:
         type: 2}
       propertyPath: fireRate
       value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010123482788, guid: ae9ec652453ef1549ae8024f63178e72,
-        type: 2}
-      propertyPath: Speed
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae9ec652453ef1549ae8024f63178e72, type: 2}
@@ -1797,7 +1792,6 @@ MonoBehaviour:
   lookAheadReturnSpeed: 0.5
   lookAheadMoveThreshold: 0.1
   yPosRestriction: -1
-  clamp: 7
 --- !u!81 &2080908488
 AudioListener:
   m_ObjectHideFlags: 0
