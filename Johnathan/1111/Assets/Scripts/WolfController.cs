@@ -3,9 +3,11 @@ using System.Collections;
 
 public class WolfController : MonoBehaviour
 {
+	public Color hurtColor = Color.red;
+	public Color normalColor = Color.white;
+	public GameObject theDrop;
     public float speed;
     public float patrolWidth = 3.50f;
-	public GameObject theDrop;
 	public int health = 100;
 
 	private float wallLeft;
@@ -23,8 +25,10 @@ public class WolfController : MonoBehaviour
 	private BoxCollider2D bc2d;
 	private CircleCollider2D c2d;
 	private GameObject childGo;
+    private Renderer render;
 
-	void Start ()
+
+    void Start ()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -32,6 +36,7 @@ public class WolfController : MonoBehaviour
         c2d = GetComponent<CircleCollider2D>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        render = GetComponent<Renderer>();
         wallLeft = transform.position.x - patrolWidth / 2;
         wallRight = transform.position.x + patrolWidth / 2;
         myTrans = this.transform;
@@ -138,6 +143,7 @@ public class WolfController : MonoBehaviour
 	public void Damage(int dmg)
 	{
 		health = health - dmg;
+        StartCoroutine(Flasher());
 		if (health <= 0) {
 			isDead = true;
 			StopWalk ();
@@ -154,5 +160,16 @@ public class WolfController : MonoBehaviour
         randomNumber = Random.Range(1, 101);
         if (randomNumber < 35)
             Instantiate(theDrop, transform.position, transform.rotation);
+    }
+
+    IEnumerator Flasher()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            render.material.color = hurtColor;
+            yield return new WaitForSeconds(.1f);
+            render.material.color = normalColor;
+            yield return new WaitForSeconds(.05f);
+        }
     }
 }

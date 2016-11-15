@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4A215182-57DF-FFFA-F3F9-A3F2A06E1CEF}</ProjectGuid>
+    <ProjectGuid>{2F3CC342-8283-6DE3-195B-B7566321AE2F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Levels\Level_Loader.cs" />
      <Compile Include="Assets\Scripts\ActorController.cs" />
+     <Compile Include="Assets\Scripts\BeeController.cs" />
      <Compile Include="Assets\Scripts\BulletController.cs" />
      <Compile Include="Assets\Scripts\Camera2DFollow.cs" />
      <Compile Include="Assets\Scripts\DestroyWithDelay.cs" />

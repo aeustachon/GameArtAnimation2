@@ -3,21 +3,25 @@ using System.Collections;
 
 public class TreantController : MonoBehaviour
 {
-	public Collider2D attackTrigger;
     public GameObject theDrop;
+	public GameObject bee;
 	public float attackCD = 0.3f;
+	public int health = 50;
 
-	private Transform target;
-	private bool attacking = false;
 	private float attackTimer = 0;
-	private Transform transform;
-	private Animator animator;
+	private bool attacking = false;
 	private bool playerInAggroRange;
 	private bool facingLeft;
     private bool dead;
-    private int randomNumber;
+	private int randomNumber;
+
+	private Transform firePoint;
+	private Transform target;
+	private Transform transform;
+	private Animator animator;
 	private Renderer render;
     private Color hurtColor = Color.black;
+    private Color normalColor = Color.white;
 
     void Start () 
 	{
@@ -25,17 +29,17 @@ public class TreantController : MonoBehaviour
         dead = false;
 		facingLeft = false;
 		playerInAggroRange = false;
-		attackTrigger.enabled = false;
 		animator = GetComponent<Animator> ();
 		transform = GetComponent<Transform> ();
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
+		firePoint = transform.FindChild("firePoint");
 	}
 		
 	void Update () 
 	{
-		if (playerInAggroRange && !dead && attacking) {
-			attack();
-		} else if (!playerInAggroRange && !attacking) {
+		if (playerInAggroRange && !dead && !attacking) {
+			attack ();
+		} else if (!playerInAggroRange && attacking) {
 			idle ();
 		}
 
@@ -69,15 +73,18 @@ public class TreantController : MonoBehaviour
 
     void attack()
 	{
-		attackTimer = attackCD;
-        attackTrigger.enabled = true;
-        animator.SetBool("Attacking", attacking);
+		print (attacking);
+		if (attacking == false) {
+			attackTimer = attackCD;
+			attacking = true;
+			Instantiate (bee, firePoint.transform.position, transform.rotation);
+			animator.SetInteger ("State", 1);
+		}
 	}
 
 	void idle()
 	{
-		attackTrigger.enabled = false;
-		animator.SetBool ("Attacking", attacking);
+		animator.SetInteger ("State", 0);
 	}
 
 	void setFacingDirection(Vector2 v2)
@@ -105,13 +112,16 @@ public class TreantController : MonoBehaviour
 		}
 	}
 
-	public void Damage()
+	public void Damage(int dmg)
 	{
-		dead = true;
-		idle();
-		render.material.color = hurtColor;
-		dropHealth();
-		Destroy(gameObject, 1);
+		health = health - dmg;
+		StartCoroutine(Flasher());
+		if (health <= 0) {
+			dead = true;
+			idle ();
+			dropHealth ();
+			Destroy (gameObject, 1);
+		}
 	}
 
     public void dropHealth()
@@ -119,5 +129,16 @@ public class TreantController : MonoBehaviour
         randomNumber = Random.Range(1, 101);
         if (randomNumber < 35)
             Instantiate(theDrop, transform.position, transform.rotation);
+    }
+
+    IEnumerator Flasher()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            render.material.color = hurtColor;
+            yield return new WaitForSeconds(.1f);
+            render.material.color = normalColor;
+            yield return new WaitForSeconds(.05f);
+        }
     }
 }

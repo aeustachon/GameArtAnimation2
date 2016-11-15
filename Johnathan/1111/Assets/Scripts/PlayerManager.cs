@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
-	public string loadLevelOnVictory;
-    public Color hurtColor = Color.red;
-    public Color normalColor = Color.white;
+	public Color hurtColor = Color.red;
+	public Color normalColor = Color.white;
 	public GameObject weapon;
+	public string loadLevelOnVictory;
     public bool touchScreenMode;                                //if you want to use WASD, make touchScreenMode false. if you want to use buttons, true.
     
 	private bool hasKey = false;
@@ -38,7 +38,7 @@ public class PlayerManager : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         render = GetComponent<Renderer>();
         player = GetComponent<Player>();
-        healthText.text = "Health: " + player.playerStats.health.ToString();
+        //healthText.text = "Health: " + player.playerStats.health.ToString();
 		weaponTransform = weapon.transform;
     }
 
@@ -46,7 +46,6 @@ public class PlayerManager : MonoBehaviour
     {
         var horizontalInput = Input.GetAxis("Horizontal");
         // player movement
-        //Debug.Log(controller.IsGrounded);
         // left player movement
         if (Mathf.Abs(horizontalInput) > 0.0f || moveRight || moveLeft)                 //check for keyboard movement, or check if eventTriggers were pressed.
             {      
@@ -248,5 +247,4 @@ public class PlayerManager : MonoBehaviour
 			t.transform.localScale = new Vector3 (-t.transform.localScale.x, t.transform.localScale.y, 1);
 		}
 	}
-
 }

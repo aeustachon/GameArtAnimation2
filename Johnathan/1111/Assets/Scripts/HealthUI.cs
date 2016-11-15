@@ -16,7 +16,7 @@ public class HealthUI : MonoBehaviour {
 
     void OnGUI()
     {
-        player1 = GameObject.Find("David");
+		player1 = GameObject.FindGameObjectWithTag ("Player");
         Player player = player1.GetComponent<Player>();
         if (player.playerStats.health > 0)
         {

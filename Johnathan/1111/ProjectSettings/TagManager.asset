@@ -19,6 +19,7 @@ TagManager:
   - HealthPickUp
   - Door
   - Weapon
+  - Enemy
   layers:
   - Default
   - TransparentFX
