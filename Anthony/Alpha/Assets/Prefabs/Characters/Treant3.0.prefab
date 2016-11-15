@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e566e504431b1408181aa44976f74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theDrop: {fileID: 0}
+  theDrop: {fileID: 1000012671107398, guid: fc252dadcc3a74b4c80058bddefa0fab, type: 2}
   bee: {fileID: 1000013285310768, guid: 0e24d6a119f441946854f6d916daef6c, type: 2}
   attackCD: 0.3
   health: 50

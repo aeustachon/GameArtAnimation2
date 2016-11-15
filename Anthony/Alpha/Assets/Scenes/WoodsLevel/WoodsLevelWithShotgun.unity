@@ -896,6 +896,11 @@ Prefab:
       propertyPath: m_Name
       value: Treant3.0 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011857937352, guid: 62c8ed9388ada3f4d90848c1949bc4e7,
+        type: 2}
+      propertyPath: attackCD
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62c8ed9388ada3f4d90848c1949bc4e7, type: 2}
   m_IsPrefabParent: 0
@@ -1238,6 +1243,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011857937352, guid: 62c8ed9388ada3f4d90848c1949bc4e7,
+        type: 2}
+      propertyPath: attackCD
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62c8ed9388ada3f4d90848c1949bc4e7, type: 2}
   m_IsPrefabParent: 0
@@ -1289,10 +1299,16 @@ Prefab:
         type: 2}
       propertyPath: theDrop
       value: 
-      objectReference: {fileID: 1691203491}
+      objectReference: {fileID: 1000012671107398, guid: fc252dadcc3a74b4c80058bddefa0fab,
+        type: 2}
     - target: {fileID: 1000010996058906, guid: 62c8ed9388ada3f4d90848c1949bc4e7, type: 2}
       propertyPath: m_Name
       value: Treant3.0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011857937352, guid: 62c8ed9388ada3f4d90848c1949bc4e7,
+        type: 2}
+      propertyPath: attackCD
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62c8ed9388ada3f4d90848c1949bc4e7, type: 2}
@@ -1381,6 +1397,11 @@ Prefab:
     - target: {fileID: 1000010996058906, guid: 62c8ed9388ada3f4d90848c1949bc4e7, type: 2}
       propertyPath: m_Name
       value: Treant3.0 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011857937352, guid: 62c8ed9388ada3f4d90848c1949bc4e7,
+        type: 2}
+      propertyPath: attackCD
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62c8ed9388ada3f4d90848c1949bc4e7, type: 2}
@@ -1641,6 +1662,11 @@ Prefab:
       propertyPath: m_Name
       value: Treant3.0 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011857937352, guid: 62c8ed9388ada3f4d90848c1949bc4e7,
+        type: 2}
+      propertyPath: attackCD
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62c8ed9388ada3f4d90848c1949bc4e7, type: 2}
   m_IsPrefabParent: 0
@@ -1749,6 +1775,11 @@ Prefab:
     - target: {fileID: 1000010996058906, guid: 62c8ed9388ada3f4d90848c1949bc4e7, type: 2}
       propertyPath: m_Name
       value: Treant3.0 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011857937352, guid: 62c8ed9388ada3f4d90848c1949bc4e7,
+        type: 2}
+      propertyPath: attackCD
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62c8ed9388ada3f4d90848c1949bc4e7, type: 2}

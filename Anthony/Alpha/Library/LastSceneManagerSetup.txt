@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/WoodsLevel/WoodsLevelWithShotgun.unity
+- path: Assets/Scenes/WoodsLevel/WoodsLevelWithPistol.unity
   isLoaded: 1
   isActive: 1
