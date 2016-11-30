@@ -3,12 +3,12 @@ If you have done or finished a part, put a "DONE" tag to indicate it and commit 
 FINAL BUILD
 
 Johnathan/Anthony
-  - fix treant
+  - fix treant                                          DONE
   - do graveyard boss (Vampire)
       ? vampire boss teleports to three place. does not have walk animation nor move
       ? boss starts at one area. after down 1/3 health boss telports to another area. after down another 1/3 health teleports to final place
       ? boss shoots a projectile (bat?) while in an area
-  - implement backgrounds
+  - implement backgrounds                                 DONE
   - fix tiles
   - change level loader PNG to ramps
   - put 2 bosses on title screen
@@ -19,11 +19,10 @@ Johnathan/Anthony
 Jose
   - Victory text/ You died text/ title text
   - upload david shooting while standing
-  - bg for graveyard
   - vampire boss
 
 Matthew
-  - sounds/music
+  - sounds/music   DONE
   - better game name 
 
 
