@@ -2674,6 +2674,11 @@ Prefab:
       propertyPath: audioShotgunShoot
       value: 
       objectReference: {fileID: 8300000, guid: 01c268e456cc6ff4084f1055f8f4c9af, type: 3}
+    - target: {fileID: 114000010830783534, guid: ab90bdab2b3cea5448ed613cd9898d87,
+        type: 2}
+      propertyPath: touchScreenMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab90bdab2b3cea5448ed613cd9898d87, type: 2}
   m_IsPrefabParent: 0

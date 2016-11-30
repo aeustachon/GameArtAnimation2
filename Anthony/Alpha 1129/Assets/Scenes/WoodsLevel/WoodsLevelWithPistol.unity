@@ -479,7 +479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &97382053
 Transform:
   m_ObjectHideFlags: 0
@@ -584,6 +584,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!58 &123416993
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 123416991}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.17, y: -4.11}
+  serializedVersion: 2
+  m_Radius: 1.08
 --- !u!1 &125582222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,6 +1994,26 @@ Prefab:
       propertyPath: audioPistolShoot
       value: 
       objectReference: {fileID: 8300000, guid: 503389af1d3ce7542b1b9106fc5c770b, type: 3}
+    - target: {fileID: 114000013290911004, guid: 417bd1c3e7571ee498a7c7f61640d213,
+        type: 2}
+      propertyPath: touchScreenMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61000011925939138, guid: 417bd1c3e7571ee498a7c7f61640d213,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 4.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 61000011925939138, guid: 417bd1c3e7571ee498a7c7f61640d213,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 2.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 61000011925939138, guid: 417bd1c3e7571ee498a7c7f61640d213,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.08
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 417bd1c3e7571ee498a7c7f61640d213, type: 2}
   m_IsPrefabParent: 0
