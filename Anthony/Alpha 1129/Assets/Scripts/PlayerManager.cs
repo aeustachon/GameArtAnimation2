@@ -31,6 +31,7 @@ public class PlayerManager : MonoBehaviour
     private Rigidbody2D rb;
 
     //All audio stuff
+    public AudioClip audioPlayerJump;
     public AudioClip audioPlayerDamaged;
     public AudioClip audioDoorOpen;
     public AudioClip audioKeyPickup;
@@ -108,11 +109,13 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) || jumping)                                          
         {
             if (wasRunningBeforeJump) {
+                //audioSourcePlayer.PlayOneShot(audioPlayerJump, 1F);       //Jump Sound
                 jumper.Jump();
             }
             else if (!wasRunningBeforeJump)
             {
                 IdleAnimation();
+                //audioSourcePlayer.PlayOneShot(audioPlayerJump, 1F);       //Jump Sound
                 jumper.Jump();
             }
         }
@@ -151,7 +154,7 @@ public class PlayerManager : MonoBehaviour
             if (hasKey)
             {
                 audioSourcePlayer.PlayOneShot(audioDoorOpen, 1F);     //Door Sound
-                SendMessageUpwards("loadScene");
+				SceneManager.LoadScene(loadLevelOnVictory);
             }
         }
         else if(otherObject.gameObject.tag == "HealthPickUp")

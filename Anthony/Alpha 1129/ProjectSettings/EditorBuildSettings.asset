@@ -26,6 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WoodsLevel/WoodsBossWithRifle.unity
   - enabled: 1
+    path: Assets/Scenes/WoodsLevel/WoodsLevelWithPistol.unity
+  - enabled: 1
     path: Assets/Scenes/WoodsLevel/WoodsBossWithShotgun.unity
   - enabled: 1
     path: Assets/Scenes/NewGame.unity
@@ -47,5 +49,11 @@ EditorBuildSettings:
     path: Assets/Scenes/WeaponSelection/GraveyardWeaponSelection.unity
   - enabled: 1
     path: Assets/Scenes/WeaponSelection/WoodsWeaponSelection.unity
+  - enabled: 1
+    path: Assets/Scenes/GraveyardLevel/GraveyardBossWithPistol.unity
+  - enabled: 1
+    path: Assets/Scenes/GraveyardLevel/GraveyardBossWithRifle.unity
+  - enabled: 1
+    path: Assets/Scenes/GraveyardLevel/GraveyardBossWithShotgun.unity
   - enabled: 1
     path: Assets/Scenes/LevelSelection.unity
