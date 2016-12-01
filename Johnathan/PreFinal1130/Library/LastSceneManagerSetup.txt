@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/GraveyardLevel/GraveyardBossWithPistol.unity
-  isLoaded: 1
-  isActive: 1
