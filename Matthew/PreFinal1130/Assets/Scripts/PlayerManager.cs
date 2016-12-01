@@ -53,7 +53,6 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(controller.IsGrounded);
         var horizontalInput = Input.GetAxis("Horizontal");
         // player movement
         // left player movement
