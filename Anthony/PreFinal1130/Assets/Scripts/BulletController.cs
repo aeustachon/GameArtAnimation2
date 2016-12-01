@@ -22,7 +22,6 @@ public class BulletController : MonoBehaviour
     {
 		if (otherObject.gameObject.tag == "Enemy")
         {
-            Debug.Log("Hit");
 			otherObject.SendMessageUpwards ("Damage", damagePerBullet);
 			Destroy (gameObject);
         }
